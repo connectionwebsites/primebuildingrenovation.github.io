@@ -58,6 +58,11 @@
     }
 }
 @media only screen and (max-width: 770px){
+    .modal_gallery-box{
+        left: calc(50% - 450px/2);
+        width: 430px;
+        height: 320px;
+    }
     /*//////WHATWEDO//////*/
     .whatwedo_p{
         padding: 0px 20px;
@@ -138,6 +143,11 @@
     }
 }
 @media only screen and (max-width: 451px){
+    .modal_gallery-box{
+        left: calc(50% - 350px/2);
+        width: 350px;
+        height: 290px;
+    }
     .hero_arrowleft,
     .hero_arrowright{
         top: calc(50% - 55px/2);
@@ -202,6 +212,11 @@
     }
 }
 @media only screen and (max-width: 377px){
+    .modal_gallery-box{
+        left: calc(50% - 290px/2);
+        width: 290px;
+        height: 210px;
+    }
     /*////////GALLERY-2////////*/
     .gallery_box-row{
         width: 27vw;
