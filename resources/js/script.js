@@ -25,7 +25,11 @@ window.onscroll = function(){
     } */
 }
 var navLi = document.getElementsByClassName('header_nav-li--row')
-
+function scrolling(id){
+    $('html, body').animate({
+        scrollTop: $(`#${id}`).offset().top-80
+    }, 1000);
+}
 function getID(a){
     return document.getElementById(`${a}`)
 }
@@ -88,6 +92,9 @@ function headerNavOut(a){
 ///////////////HERO
 var heroFlow = getID('hero-flow').innerHTML;
 var flowFunction;
+function heroBottom(a){
+
+}
 function heroAuto(heroCount){
     clearTimeout(flowFunction);
 

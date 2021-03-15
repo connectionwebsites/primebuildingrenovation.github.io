@@ -23,7 +23,16 @@
 
         <link href="http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css"/>
     </head>
-    <body onload="heroAuto(1)">
+    <body onload="heroText()">
+        <div class="modal" id="modal-gallery">
+            <div class="modal_back" onclick="galleryClose()"></div>
+            <div class="modal_exit">
+                <span style="cursor: pointer;" onclick="galleryClose()">X</span>
+            </div>
+            <div class="modal_gallery-box" id="modal-gallery-box">
+                <img src="" class="img" id="modal-gallery-img">
+            </div>
+        </div>
         <div class="headerside_modalexit" id="headerside-modalexit" onclick="headerClose()"></div>
         <div class="headerside" id="headerside-js">
             <div class="headerside_box">
@@ -176,118 +185,123 @@
             <div class="headermobile_verticalline" id="header-verticalline"></div>
         </header>  
         <div class="headermobile_back"></div>    
-        <section class="hero" style="background-color: #111;">
-            <span class="none" id="hero-flow" style="display: none;">1</span>
-            <div class="hero_img" id="hero-img-1"></div>
-            <div class="hero_img" id="hero-img-2"></div>
-            <div class="hero_img" id="hero-img-3"></div>
-            <div class="hero_img" id="hero-img-4"></div>
-            <div class="hero_arrowleft" onclick="heroSlideL('1')" id="hero-arrowleft">
-                <img src="resources/img/arrowwhite-left-80x80-noback.png" class="img">
+        <section class="hero">
+            <div class="hero_layer"></div>
+            <div class="heroportfolio_img"></div>
+            <div class="heroportfolio_text">
+                <div class="heroportfolio_text-title" id="heroportfolio-title">
+                    <span>Portfolio</span>
+                </div>
+                <div class="heroportfolio_text-subtitle" id="heroportfolio-subtitle">
+                    <span>JUST A FEW RECENT EXAMPLES OF OUR WORK</span>
+                </div>
             </div>
-            <div class="hero_arrowright" onclick="heroSlideR('1')" id="hero-arrowright">
-                <img src="resources/img/arrowwhite-right-80x80-noback.png" class="img">
-            </div>
-            <div class="hero_text" id="hero-text-1">
-                <span>Texto 1</span>
-            </div>
-            <div class="hero_text" id="hero-text-2">
-                <span>Texto 2</span>
-            </div>
-            <div class="hero_text" id="hero-text-3">
-                <span>Texto 3</span>
-            </div>
-            <div class="hero_text" id="hero-text-4">
-                <span>Texto 4</span>
-            </div>
-            <div class="hero_button" onclick="scrolling('whatwedo-js')">
+            <div class="hero_button" onclick="heroBottom('portfolio-text')">
                 <div class="hero_button-img"></div>
             </div>
         </section>
-        <section class="whatwedo" id="whatwedo-js">
-            <div class="whatwedo_title">
-                <span>What We Do</span>
-            </div>
-            <div class="whatwedo_subtitle">
-                <span>Commercial and Residential Remodeling</span>
-            </div>
-            <div class="whatwedo_p">
-                <p>Prime Building remodel in a smart, fast, responsible way. Attending the client's deadline. Delivering all your experience and knowledge to execute the project, enchanting the client, step by step. Located, actually in Orlando, FL, and it's ready to attend in all state of Florida. Prime Building wishes to be recognized in the hotel chain for its responsibility and compromise for doing its job efficient and effectively.</p>
-            </div>
+        <section class="portfolio_text" id="portfolio-text">
+            <p>Lorem ipsum sit amet consectetur adipisicing elit. Assumenda nesciunt aliquid debitis eligendi ratione autem tempora nemo repudiandae! Ad veritatis incidunt accusamus minima fuga consectetur,e error, aliquam quam impeditemque recusandae commodi aut aperiam possimus necessitatibus architecto earum sapiente qui ea! Ab perspiciatis aspernatur impedit exercitationem suscipit. Numquam, facere autem laudantium reprehenderit error recusandae at! Reprehenderit facere labore mollitia iusto aut ut error cumque suscipit ad? Pariaturemque iste amet. Perferendis beatae odit esse suscipit id, debitis nobis vero molestiae mollitia sunt autem enim ipsa iure optio animi odio ex ut adipisci excepturi. Accusantium laboriosam quam, necessitatibus, deserunt quis hic officiis iure eum ipsum esse incidunt eveniet blanditiis consequuntur distinctio recusandae laborum aperiam molestias. Repudiandae eum nihil quo animi praesentium. Eius, voluptate vitae quod aperiam earum possimus, ipsamem aspernatur dicta cumque odio! Rem, dicta nemo a temporibus itaque qui dignissimos isteibus facilis mollitia aperiam impedit expedita?</p>
         </section>
-        <section class="homegrid" id="homegrid-js">
-            <a href="#">
-                <div class="homegrid_unit">
-                    <div class="homegrid_unit-hover">
-                        <div class="homegrid_unit-hover--title">
-                            See more
-                        </div>
+        <section class="portfolio_gallery">
+            <div class="portfolio_gallery-label">
+                <div class="portfolio_gallery-label--box">
+                    <div class="portfolio_gallery-label--box---unit" onclick="portfolioLabel('all')">
+                        <span style="color: #555;" id="label-span-all">All</span>
                     </div>
-                    <div class="homegrid_unit-img" id="homegrid-unit-img-1">
-                        <img src="resources/img/ionicons-2.JPG" class="img" class="img-circle">
+                    <div class="portfolio_gallery-label--box---unit" onclick="portfolioLabel('residencial')">
+                        <span id="label-span-residencial">Residencial</span>
                     </div>
-                    <div class="homegrid_unit-title">
-                        <span>What We Care</span>
-                    </div>
-                    <div class="homegrid_unit-text">
-                        <p>Prime Building Renovation is connected and actualized with the environmental care, and the safety of clients and professionals...</p>
+                    <div class="portfolio_gallery-label--box---unit" onclick="portfolioLabel('commercial')">
+                        <span id="label-span-commercial">Commercial</span>
                     </div>
                 </div>
-            </a>
-            <a href="portfolio.html">
-                <div class="homegrid_unit">
-                    <div class="homegrid_unit-hover">
-                        <div class="homegrid_unit-hover--title">
-                            See more
+            </div>
+            <div class="portfolio_gallery-images" id="portfolio-gallery-images-all">
+                <div id="portfolio-gallery-box-all" style="opacity: 1;">
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',1)" onmouseout="imageOut('all',1)" onclick="galleryOpen('all',1)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-1-all"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-1.jpg" class="img" id="portfolio-image-1-all">
                         </div>
                     </div>
-                    <div class="homegrid_unit-img" id="homegrid-unit-img-2">
-                        <img src="resources/img/ionicons-1.JPG" class="img">
-                    </div>
-                    <div class="homegrid_unit-title">
-                        <span>Portfolio</span>
-                    </div>
-                    <div class="homegrid_unit-text">
-                        <p>Our first project was in Universal Park, we took part on the revitalization of the main entrance's paintwork. We also revitalized one of Harry Potter attractions and...</p>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="homegrid_unit">
-                    <div class="homegrid_unit-hover">
-                        <div class="homegrid_unit-hover--title">
-                            See more
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',2)" onmouseout="imageOut('all',2)" onclick="galleryOpen('all',2)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-2-all"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-2.jpg" class="img" id="portfolio-image-2-all">
                         </div>
                     </div>
-                    <div class="homegrid_unit-img" id="homegrid-unit-img-3">
-                        <img src="resources/img/ionicons-3.JPG" class="img">
-                    </div>
-                    <div class="homegrid_unit-title">
-                        <span>Services & Logistic</span>
-                    </div>
-                    <div class="homegrid_unit-text">
-                        <p>The logistic is part of our daily work, our routine begins with the analysis of the work field, permissions and authorizations, followed by receiving and...</p>
-                    </div>
-                </div>
-            </a>
-            <a href="ourteam.html">
-                <div class="homegrid_unit">
-                    <div class="homegrid_unit-hover">
-                        <div class="homegrid_unit-hover--title">
-                            See more
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',3)" onmouseout="imageOut('all',3)" onclick="galleryOpen('all',3)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-3-all"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-3.jpg" class="img" id="portfolio-image-3-all">
                         </div>
                     </div>
-                    <div class="homegrid_unit-img" id="homegrid-unit-img-4">
-                        <img src="resources/img/ionicons-4.JPG" class="img">
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',4)" onmouseout="imageOut('all',4)" onclick="galleryOpen('all',4)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-4-all"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-4.jpg" class="img" id="portfolio-image-4-all">
+                        </div>
                     </div>
-                    <div class="homegrid_unit-title">
-                        <span>Our Team</span>
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',5)" onmouseout="imageOut('all',5)" onclick="galleryOpen('all',5)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-5-all"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-5.jpg" class="img" id="portfolio-image-5-all">
+                        </div>
                     </div>
-                    <div class="homegrid_unit-text">
-                        <p>Our staff is concise and filled with very experienced professionals.</p>
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',6)" onmouseout="imageOut('all',6)" onclick="galleryOpen('all',6)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-6-all"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-6.jpg" class="img" id="portfolio-image-6-all">
+                        </div>
                     </div>
                 </div>
-            </a>
+            </div>
+            <div class="portfolio_gallery-images none" id="portfolio-gallery-images-residencial">
+                <div id="portfolio-gallery-box-residencial">
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',1)" onmouseout="imageOut('residencial',1)" onclick="galleryOpen('residencial',1)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-1-residencial"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-1.jpg" class="img" id="portfolio-image-1-residencial">
+                        </div>
+                    </div>
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',2)" onmouseout="imageOut('residencial',2)" onclick="galleryOpen('residencial',2)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-2-residencial"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-2.jpg" class="img" id="portfolio-image-2-residencial">
+                        </div>
+                    </div>
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',3)" onmouseout="imageOut('residencial',3)" onclick="galleryOpen('residencial',3)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-3-residencial"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-3.jpg" class="img" id="portfolio-image-3-residencial">
+                        </div>
+                    </div>
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',4)" onmouseout="imageOut('residencial',4)" onclick="galleryOpen('residencial',4)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-4-residencial"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-4.jpg" class="img" id="portfolio-image-4-residencial">
+                        </div>
+                    </div>
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',5)" onmouseout="imageOut('residencial',5)" onclick="galleryOpen('residencial',5)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-5-residencial"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-5.jpg" class="img" id="portfolio-image-5-residencial">
+                        </div>
+                    </div>
+                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',6)" onmouseout="imageOut('residencial',6)" onclick="galleryOpen('residencial',6)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-6-residencial"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/residencial-6.jpg" class="img" id="portfolio-image-6-residencial">
+                        </div>
+                    </div>     
+                </div>
+            </div>
+            <div class="portfolio_gallery-images none" id="portfolio-gallery-images-commercial">
+                <div id="portfolio-gallery-box-commercial">
+                    
+                </div>
+            </div>
         </section>
         <!--CONTACT-1-->
         <section class="section_contact" id="section-contact">
@@ -393,5 +407,5 @@
             </div>
         </footer>
     </body>
-    <script src="resources/js/script.js"></script>
+    <script src="resources/js/portfolio.js"></script>
 </html>

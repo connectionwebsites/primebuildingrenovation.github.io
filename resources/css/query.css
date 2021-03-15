@@ -44,6 +44,15 @@
         width: 100%;
         margin-left: 0px;
     }
+    /*////////PORTFOLIO////////*/
+    .portfolio_text{
+        padding: 80px 80px;
+    }
+    .portfolio_gallery-images--unit{
+        width: 39.5vw;
+        height: 31vw;
+        margin-left: 7vw;
+    }
 }
 @media only screen and (max-width: 770px){
     /*//////WHATWEDO//////*/
@@ -95,6 +104,35 @@
     .homegrid_unit-hover--title{
         margin-top: 20vw;
     }
+    .footer_menu{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .footer_menu-row1{
+        width: 290px;
+        margin-left: calc(50% - 290px/2);
+        padding-bottom: 40px;
+    }
+    .footer_menu-row2{
+        width: 330px;
+        margin-left: calc(50% - 330px/2);
+        padding-bottom: 40px;
+    }
+
+    .heroportfolio_text{
+        top: 250px;
+        left: 45px;
+        width: 430px;
+    }
+    .heroportfolio_text-title{
+        font-size: 300%;
+    }
+    .heroportfolio_text-subtitle{
+        font-size: 70%;
+    }
+    .portfolio_text{
+        padding: 80px 40px;
+    }
 }
 @media only screen and (max-width: 451px){
     .hero_arrowleft,
@@ -135,6 +173,30 @@
     .gallery_modal-arrowright{
         left: calc(100% - 120px);
     }
+    /*////////PORTFOLIO////////*/
+    .heroportfolio_text{
+        top: 230px;
+        left: 20px;
+        width: 310px;
+    }
+    .heroportfolio_text-title{
+        font-size: 300%;
+    }
+    .heroportfolio_text-subtitle{
+        font-size: 50%;
+    }
+    .portfolio_gallery-images--unit{
+        width: 80vw;
+        height: 60vw;
+        margin-left: 10vw;
+    }
+    .portfolio_gallery-label--box{
+        width: 300px;
+        margin-left: calc(50% - 300px/2);
+    }
+    .portfolio_gallery-label--box---unit{
+        font-size: 95%;
+    }
 }
 @media only screen and (max-width: 377px){
     /*////////GALLERY-2////////*/
@@ -166,4 +228,24 @@
     .gallery_modal-arrowright{
         left: calc(100% - 80px);
     }
+    .footer_menu-row1{
+        width: 270px;
+        margin-left: calc(50% - 270px/2);
+    }
+    .footer_menu-row2{
+        width: 310px;
+        margin-left: calc(50% - 310px/2);
+    }
+    .footer_menu-li{
+        font-size: 90%;
+    }
+    
+    .heroportfolio_text{
+        width: 290px;
+        left: 20px;
+    }
+    .heroportfolio_text-subtitle{
+        line-height: 18px;
+    }
 }
+
