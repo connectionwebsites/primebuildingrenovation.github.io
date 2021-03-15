@@ -126,7 +126,9 @@
         margin-left: calc(50% - 330px/2);
         padding-bottom: 40px;
     }
-
+    .portfolio_text{
+        padding: 80px 20px;
+    }
     .heroportfolio_text{
         top: 250px;
         left: 45px;
@@ -137,9 +139,6 @@
     }
     .heroportfolio_text-subtitle{
         font-size: 70%;
-    }
-    .portfolio_text{
-        padding: 80px 40px;
     }
 }
 @media only screen and (max-width: 451px){
