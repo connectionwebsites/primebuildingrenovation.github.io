@@ -56,6 +56,18 @@
         height: 31vw;
         margin-left: 7vw;
     }
+    .scaleoff{
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+    }
+    .sizeoff{
+        width: 0%;
+        height: 0px;
+        margin-left: 0%;
+    }
 }
 @media only screen and (max-width: 770px){
     .modal_gallery-box{
@@ -129,6 +141,9 @@
     .portfolio_text{
         padding: 80px 20px;
     }
+    .portfolio_gallery-label--unit{
+        font-size: 140%;
+    }
     .heroportfolio_text{
         top: 250px;
         left: 45px;
@@ -139,6 +154,28 @@
     }
     .heroportfolio_text-subtitle{
         font-size: 70%;
+    }
+    .portfolio_gallery-category{
+        overflow-x: scroll;
+    }
+    .portfolio_gallery-category--row{
+        width: calc(100% + 400px);
+    }
+    .portfolio_gallery-category--row---unit{
+        width: auto;
+        padding: 0px 20px;
+    }
+    .scaleoff{
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+    }
+    .sizeoff{
+        width: 0%;
+        height: 0px;
+        margin-left: 0%;
     }
 }
 @media only screen and (max-width: 451px){
@@ -186,6 +223,9 @@
         left: calc(100% - 120px);
     }
     /*////////PORTFOLIO////////*/
+    .portfolio_gallery-label--unit{
+        font-size: 120%;
+    }
     .heroportfolio_text{
         top: 230px;
         left: 20px;
@@ -208,6 +248,18 @@
     }
     .portfolio_gallery-label--box---unit{
         font-size: 95%;
+    }
+    .scaleoff{
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+    }
+    .sizeoff{
+        width: 0%;
+        height: 0px;
+        margin-left: 0%;
     }
 }
 @media only screen and (max-width: 377px){
@@ -263,6 +315,21 @@
     }
     .heroportfolio_text-subtitle{
         line-height: 18px;
+    }
+    .portfolio_gallery-category--row{
+        width: calc(100% + 580px);
+    }
+    .scaleoff{
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+    }
+    .sizeoff{
+        width: 0%;
+        height: 0px;
+        margin-left: 0%;
     }
 }
 

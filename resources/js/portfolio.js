@@ -13,6 +13,20 @@ function scrolling(id){
         scrollTop: $(`#${id}`).offset().top-80
     }, 1000);
 }
+function testt(){
+    getID('testtt').classList.add('testt')
+    getID('testtt2').classList.add('testt')
+    setTimeout(() => {
+        getID('testtt').classList.add('testt2')
+        getID('testtt2').classList.add('testt2')
+    }, 500);
+}
+function retestt(){
+    getID('testtt').classList.remove('testt')
+    getID('testtt2').classList.remove('testt')
+    getID('testtt').classList.remove('testt2')
+    getID('testtt2').classList.remove('testt2')
+}
 var navLi = document.getElementsByClassName('header_nav-li--row')
 function headerOpen(){
     getID('headerside-js').style.transition = 'all 1s';
@@ -78,15 +92,15 @@ function heroBottom(a){
     scrolling(a)
 }
 function imageHover(a,b){
-    getID(`portfolio-image-hover-${b}-${a}`).style.opacity = 1;
+    getID(`portfolio-image-hover-${a}-${b}`).style.opacity = 1;
 }
 function imageOut(a,b){
-    getID(`portfolio-image-hover-${b}-${a}`).style.opacity = 0;
+    getID(`portfolio-image-hover-${a}-${b}`).style.opacity = 0;
 }
 function galleryOpen(a,b){
     getID(`modal-gallery`).style.display = "block";
     getID('modal-gallery-box').classList.add('animation_scale');
-    getID('modal-gallery-img').src = getID(`portfolio-image-${b}-${a}`).src
+    getID('modal-gallery-img').src = getID(`portfolio-image-${a}-${b}`).src
 }
 function galleryClose(){
     getID(`modal-gallery`).style.display = "none";
@@ -94,58 +108,315 @@ function galleryClose(){
     getID('modal-gallery-img').src = "";
 }
 function portfolioLabel(a){
-    galleryAnimation(a);
-    if(a == 'all'){
-        getID('label-span-all').style.color = '#555';
-        getID('label-span-residencial').style.color = '#ccc';
-        getID('label-span-commercial').style.color = '#ccc';
-    }
     if(a == 'residencial'){
-        getID('label-span-all').style.color = '#ccc';
         getID('label-span-residencial').style.color = '#555';
         getID('label-span-commercial').style.color = '#ccc';
+        getID('category-choosed').innerHTML = 'res';
+        portfolioCategoryAll('res');
     }
     if(a == 'commercial'){
-        getID('label-span-all').style.color = '#ccc';
         getID('label-span-residencial').style.color = '#ccc';
         getID('label-span-commercial').style.color = '#555';
+        getID('category-choosed').innerHTML = 'com';
+        portfolioCategoryAll('com');
     }
 }
-function galleryAnimation(a){
+function portfolioCategoryAll(a){
+        portfolioCategoryOn(a, 'demo');
+        portfolioCategoryOn(a, 'dry');
+        portfolioCategoryOn(a, 'painting');
+        portfolioCategoryOn(a, 'flooring');
+        portfolioCategoryOn(a, 'metals');
+        portfolioCategoryOn(a, 'tile');
+        portfolioCategoryOn(a, 'shower');
+        portfolioMultiplesOn();
+    if(a == 'com'){
+        portfolioCategoryOff('res', 'demo');
+        portfolioCategoryOff('res', 'dry');
+        portfolioCategoryOff('res', 'painting');
+        portfolioCategoryOff('res', 'flooring');
+        portfolioCategoryOff('res', 'metals');
+        portfolioCategoryOff('res', 'tile');
+        portfolioCategoryOff('res', 'shower');
+    }else if(a == 'res'){
+        portfolioCategoryOff('com', 'demo');
+        portfolioCategoryOff('com', 'dry');
+        portfolioCategoryOff('com', 'painting');
+        portfolioCategoryOff('com', 'flooring');
+        portfolioCategoryOff('com', 'metals');
+        portfolioCategoryOff('com', 'tile');
+        portfolioCategoryOff('com', 'shower');
+    }
+}
+function portfolioCategory(a){
+    portfolioCategoryLabel(a);
+    var type = getID('category-choosed').innerHTML
+    var images = document.getElementsByClassName(`${type}-${a}`).length;
+    for(i=1;i<=images;i++){
+        getID(`portfolio-unit-${type}-${a}-${i}`).classList.remove('scaleoff');
+        getID(`portfolio-unit-${type}-${a}-${i}`).classList.remove('sizeoff');
+    }
+    if(type == 'com'){
+        portfolioCategoryOff('res', 'demo');
+        portfolioCategoryOff('res', 'dry');
+        portfolioCategoryOff('res', 'painting');
+        portfolioCategoryOff('res', 'flooring');
+        portfolioCategoryOff('res', 'metals');
+        portfolioCategoryOff('res', 'tile');
+        portfolioCategoryOff('res', 'shower');
+        if(a == 'all'){
+            portfolioMultiplesOff();
+            portfolioCategoryOn('com', 'demo');
+            portfolioCategoryOn('com', 'dry');
+            portfolioCategoryOn('com', 'painting');
+            portfolioCategoryOn('com', 'flooring');
+            portfolioCategoryOn('com', 'metals');
+            portfolioCategoryOn('com', 'tile');
+            portfolioCategoryOn('com', 'shower');
+        }else{
+            portfolioMultiplesOn();
+            if(a == 'demo'){
+                portfolioCategoryOff('com', 'dry');
+                portfolioCategoryOff('com', 'painting');
+                portfolioCategoryOff('com', 'flooring');
+                portfolioCategoryOff('com', 'metals');
+                portfolioCategoryOff('com', 'tile');
+                portfolioCategoryOff('com', 'shower');
+            }else if(a == 'dry'){
+                portfolioCategoryOff('com', 'demo');
+                portfolioCategoryOff('com', 'painting');
+                portfolioCategoryOff('com', 'flooring');
+                portfolioCategoryOff('com', 'metals');
+                portfolioCategoryOff('com', 'tile');
+                portfolioCategoryOff('com', 'shower');
+            }else if(a == 'painting'){
+                portfolioCategoryOff('com', 'dry');
+                portfolioCategoryOff('com', 'demo');
+                portfolioCategoryOff('com', 'flooring');
+                portfolioCategoryOff('com', 'metals');
+                portfolioCategoryOff('com', 'tile');
+                portfolioCategoryOff('com', 'shower');
+            }else if(a == 'flooring'){
+                portfolioCategoryOff('com', 'dry');
+                portfolioCategoryOff('com', 'painting');
+                portfolioCategoryOff('com', 'demo');
+                portfolioCategoryOff('com', 'metals');
+                portfolioCategoryOff('com', 'tile');
+                portfolioCategoryOff('com', 'shower');
+            }else if(a == 'metals'){
+                portfolioCategoryOff('com', 'dry');
+                portfolioCategoryOff('com', 'painting');
+                portfolioCategoryOff('com', 'flooring');
+                portfolioCategoryOff('com', 'demo');
+                portfolioCategoryOff('com', 'tile');
+                portfolioCategoryOff('com', 'shower');
+            }else if(a == 'tile'){
+                portfolioCategoryOff('com', 'dry');
+                portfolioCategoryOff('com', 'painting');
+                portfolioCategoryOff('com', 'flooring');
+                portfolioCategoryOff('com', 'metals');
+                portfolioCategoryOff('com', 'demo');
+                portfolioCategoryOff('com', 'shower');
+            }else if(a == 'shower'){
+                portfolioCategoryOff('com', 'dry');
+                portfolioCategoryOff('com', 'painting');
+                portfolioCategoryOff('com', 'flooring');
+                portfolioCategoryOff('com', 'metals');
+                portfolioCategoryOff('com', 'tile');
+                portfolioCategoryOff('com', 'demo');
+            }
+        } 
+    }else if(type == 'res'){
+        portfolioCategoryOff('com', 'demo');
+        portfolioCategoryOff('com', 'dry');
+        portfolioCategoryOff('com', 'painting');
+        portfolioCategoryOff('com', 'flooring');
+        portfolioCategoryOff('com', 'metals');
+        portfolioCategoryOff('com', 'tile');
+        portfolioCategoryOff('com', 'shower');
+        if(a == 'all'){
+            portfolioMultiplesOff();
+            portfolioCategoryOn('res', 'demo');
+            portfolioCategoryOn('res', 'dry');
+            portfolioCategoryOn('res', 'painting');
+            portfolioCategoryOn('res', 'flooring');
+            portfolioCategoryOn('res', 'metals');
+            portfolioCategoryOn('res', 'tile');
+            portfolioCategoryOn('res', 'shower');
+        }else{
+            portfolioMultiplesOn();
+            if(a == 'demo'){
+                portfolioCategoryOff('res', 'dry');
+                portfolioCategoryOff('res', 'painting');
+                portfolioCategoryOff('res', 'flooring');
+                portfolioCategoryOff('res', 'metals');
+                portfolioCategoryOff('res', 'tile');
+                portfolioCategoryOff('res', 'shower');
+            }else if(a == 'dry'){
+                portfolioCategoryOff('res', 'demo');
+                portfolioCategoryOff('res', 'painting');
+                portfolioCategoryOff('res', 'flooring');
+                portfolioCategoryOff('res', 'metals');
+                portfolioCategoryOff('res', 'tile');
+                portfolioCategoryOff('res', 'shower');
+            }else if(a == 'painting'){
+                portfolioCategoryOff('res', 'dry');
+                portfolioCategoryOff('res', 'demo');
+                portfolioCategoryOff('res', 'flooring');
+                portfolioCategoryOff('res', 'metals');
+                portfolioCategoryOff('res', 'tile');
+                portfolioCategoryOff('res', 'shower');
+            }else if(a == 'flooring'){
+                portfolioCategoryOff('res', 'dry');
+                portfolioCategoryOff('res', 'painting');
+                portfolioCategoryOff('res', 'demo');
+                portfolioCategoryOff('res', 'metals');
+                portfolioCategoryOff('res', 'tile');
+                portfolioCategoryOff('res', 'shower');
+            }else if(a == 'metals'){
+                portfolioCategoryOff('res', 'dry');
+                portfolioCategoryOff('res', 'painting');
+                portfolioCategoryOff('res', 'flooring');
+                portfolioCategoryOff('res', 'demo');
+                portfolioCategoryOff('res', 'tile');
+                portfolioCategoryOff('res', 'shower');
+            }else if(a == 'tile'){
+                portfolioCategoryOff('res', 'dry');
+                portfolioCategoryOff('res', 'painting');
+                portfolioCategoryOff('res', 'flooring');
+                portfolioCategoryOff('res', 'metals');
+                portfolioCategoryOff('res', 'demo');
+                portfolioCategoryOff('res', 'shower');
+            }else if(a == 'shower'){
+                portfolioCategoryOff('res', 'dry');
+                portfolioCategoryOff('res', 'painting');
+                portfolioCategoryOff('res', 'flooring');
+                portfolioCategoryOff('res', 'metals');
+                portfolioCategoryOff('res', 'tile');
+                portfolioCategoryOff('res', 'demo');
+            }
+        } 
+    }
+    
+}
+function portfolioCategoryOff(typeA,cat){
+    var imagesA = document.getElementsByClassName(`${typeA}-${cat}`).length;
+    for(i=1;i<=imagesA;i++){
+        getID(`portfolio-unit-${typeA}-${cat}-${i}`).classList.add('scaleoff');
+        getID(`portfolio-unit-${typeA}-${cat}-${i}`).classList.add('sizeoff');
+    }
+}
+function portfolioCategoryOn(typeA,cat){
+    var imagesA = document.getElementsByClassName(`${typeA}-${cat}`).length;
+    for(i=1;i<=imagesA;i++){
+        getID(`portfolio-unit-${typeA}-${cat}-${i}`).classList.remove('scaleoff');
+        getID(`portfolio-unit-${typeA}-${cat}-${i}`).classList.remove('sizeoff');
+    }
+}
+function portfolioMultiplesOff(){
+    var images = document.getElementsByClassName('portfolio_gallery-multiplesimages--unit')
+    for(i=0;i<images.length;i++){
+        images[i].style.display = "none";
+
+    }
+}
+function portfolioMultiplesOn(){
+    var images = document.getElementsByClassName('portfolio_gallery-multiplesimages--unit')
+    for(i=0;i<images.length;i++){
+        images[i].style.display = "block";
+    }
+}
+function portfolioCategoryLabel(a){
+    getID(`portfolio-gallery-category-label-${a}`).style.color = '#222';
     if(a == 'all'){
-        getID(`portfolio-gallery-box-residencial`).style.opacity = 0;
-        getID(`portfolio-gallery-box-commercial`).style.opacity = 0;
-        setTimeout(() => {
-            getID(`portfolio-gallery-images-residencial`).style.display = 'none';
-            getID(`portfolio-gallery-images-commercial`).style.display = 'none';
-            setTimeout(() => {
-                getID(`portfolio-gallery-box-all`).style.opacity = 1;
-            }, 250);
-            getID(`portfolio-gallery-images-all`).style.display = 'block';
-        }, 250);
+        portfolioCategoryLabelEffect(
+            'painting',
+            'dry',
+            'flooring',
+            'demo',
+            'metals',
+            'tile',
+            'shower'
+        )
+    }else if(a == 'painting'){
+        portfolioCategoryLabelEffect(
+            'all',
+            'dry',
+            'flooring',
+            'demo',
+            'metals',
+            'tile',
+            'shower'
+        )
+    }else if(a == 'dry'){
+        portfolioCategoryLabelEffect(
+            'painting',
+            'all',
+            'flooring',
+            'demo',
+            'metals',
+            'tile',
+            'shower'
+        )
+    }else if(a == 'flooring'){
+        portfolioCategoryLabelEffect(
+            'painting',
+            'dry',
+            'all',
+            'demo',
+            'metals',
+            'tile',
+            'shower'
+        )
+    }else if(a == 'demo'){
+        portfolioCategoryLabelEffect(
+            'painting',
+            'dry',
+            'flooring',
+            'all',
+            'metals',
+            'tile',
+            'shower'
+        )
+    }else if(a == 'metals'){
+        portfolioCategoryLabelEffect(
+            'painting',
+            'dry',
+            'flooring',
+            'demo',
+            'all',
+            'tile',
+            'shower'
+        )
+    }else if(a == 'tile'){
+        portfolioCategoryLabelEffect(
+            'painting',
+            'dry',
+            'flooring',
+            'demo',
+            'metals',
+            'all',
+            'shower'
+        )
+    }else if(a == 'shower'){
+        portfolioCategoryLabelEffect(
+            'painting',
+            'dry',
+            'flooring',
+            'demo',
+            'metals',
+            'tile',
+            'all'
+        )
     }
-    if(a == 'residencial'){
-        getID(`portfolio-gallery-box-all`).style.opacity = 0;
-        getID(`portfolio-gallery-box-commercial`).style.opacity = 0;
-        setTimeout(() => {
-            getID(`portfolio-gallery-images-all`).style.display = 'none';
-            getID(`portfolio-gallery-images-commercial`).style.display = 'none';
-            setTimeout(() => {
-                getID(`portfolio-gallery-box-residencial`).style.opacity = 1;
-            }, 250);
-            getID(`portfolio-gallery-images-residencial`).style.display = 'block';
-        }, 250);
-    }
-    if(a == 'commercial'){
-        getID(`portfolio-gallery-box-residencial`).style.opacity = 0;
-        getID(`portfolio-gallery-box-all`).style.opacity = 0;
-        setTimeout(() => {
-            getID(`portfolio-gallery-images-residencial`).style.display = 'none';
-            getID(`portfolio-gallery-images-all`).style.display = 'none';
-            setTimeout(() => {
-                getID(`portfolio-gallery-box-commercial`).style.opacity = 1;
-            }, 250);
-            getID(`portfolio-gallery-images-commercial`).style.display = 'block';
-        }, 250);
-    }
+}
+function portfolioCategoryLabelEffect(a,b,c,d,e,f,g){
+    getID(`portfolio-gallery-category-label-${a}`).style.color = '#ccc';
+    getID(`portfolio-gallery-category-label-${b}`).style.color = '#ccc';
+    getID(`portfolio-gallery-category-label-${c}`).style.color = '#ccc';
+    getID(`portfolio-gallery-category-label-${d}`).style.color = '#ccc';
+    getID(`portfolio-gallery-category-label-${e}`).style.color = '#ccc';
+    getID(`portfolio-gallery-category-label-${f}`).style.color = '#ccc';
+    getID(`portfolio-gallery-category-label-${g}`).style.color = '#ccc';
+
 }

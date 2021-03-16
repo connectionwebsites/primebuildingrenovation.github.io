@@ -206,102 +206,240 @@
         </section>
         <section class="portfolio_gallery">
             <div class="portfolio_gallery-label">
-                <div class="portfolio_gallery-label--box">
-                    <div class="portfolio_gallery-label--box---unit" onclick="portfolioLabel('all')">
-                        <span style="color: #555;" id="label-span-all">All</span>
+                <div class="portfolio_gallery-label--unit">
+                    <span id="label-span-commercial" style="color: #555;"  onclick="portfolioLabel('commercial')">Commercial</span>
+                </div>
+                <div class="portfolio_gallery-label--unit" onclick="portfolioLabel('residencial')">
+                    <span id="label-span-residencial"  onclick="portfolioLabel('commercial')">Residencial</span>
+                </div>
+            </div>
+            <div class="portfolio_gallery-category">
+                <div class="portfolio_gallery-category--row">
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span style="color: #222;" onclick="portfolioCategory('all')" id="portfolio-gallery-category-label-all" >All</span>
                     </div>
-                    <div class="portfolio_gallery-label--box---unit" onclick="portfolioLabel('residencial')">
-                        <span id="label-span-residencial">Residencial</span>
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span id="portfolio-gallery-category-label-painting" onclick="portfolioCategory('painting')">Painting</span>
                     </div>
-                    <div class="portfolio_gallery-label--box---unit" onclick="portfolioLabel('commercial')">
-                        <span id="label-span-commercial">Commercial</span>
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span onclick="portfolioCategory('dry')" id="portfolio-gallery-category-label-dry">Drywall</span>
+                    </div>
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span onclick="portfolioCategory('flooring')" id="portfolio-gallery-category-label-flooring">Flooring</span>
+                    </div>
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span onclick="portfolioCategory('demo')" id="portfolio-gallery-category-label-demo">Demolition</span>
+                    </div>
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span onclick="portfolioCategory('metals')" id="portfolio-gallery-category-label-metals">Metals</span>
+                    </div>
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span onclick="portfolioCategory('tile')" id="portfolio-gallery-category-label-tile">Tile</span>
+                    </div>
+                    <div class="portfolio_gallery-category--row---unit">
+                        <span onclick="portfolioCategory('shower')" id="portfolio-gallery-category-label-shower">Shower</span>
                     </div>
                 </div>
             </div>
-            <div class="portfolio_gallery-images" id="portfolio-gallery-images-all">
-                <div id="portfolio-gallery-box-all" style="opacity: 1;">
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',1)" onmouseout="imageOut('all',1)" onclick="galleryOpen('all',1)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-1-all"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-1.jpg" class="img" id="portfolio-image-1-all">
-                        </div>
+
+            <span id="category-choosed" style="display: none;">com</span>
+            <div class="portfolio_gallery-images">
+                <!--------------------------COMMERCIAL-------------------------->
+                <!--DEMOLITION-->
+                <div class="portfolio_gallery-images--unit com-demo" id="portfolio-unit-com-demo-1" onmouseover="imageHover('com-demo',1)" onmouseout="imageOut('com-demo',1)" onclick="galleryOpen('com-demo',1)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-demo-1"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-demolition1.jpg" class="img" id="portfolio-image-com-demo-1">
                     </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',2)" onmouseout="imageOut('all',2)" onclick="galleryOpen('all',2)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-2-all"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-2.jpg" class="img" id="portfolio-image-2-all">
-                        </div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-demo" id="portfolio-unit-com-demo-2" onmouseover="imageHover('com-demo',2)" onmouseout="imageOut('com-demo',2)" onclick="galleryOpen('com-demo',2)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-demo-2"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-demolition2.jpg" class="img" id="portfolio-image-com-demo-2">
                     </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',3)" onmouseout="imageOut('all',3)" onclick="galleryOpen('all',3)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-3-all"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-3.jpg" class="img" id="portfolio-image-3-all">
-                        </div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-demo" id="portfolio-unit-com-demo-3" onmouseover="imageHover('com-demo',3)" onmouseout="imageOut('com-demo',3)" onclick="galleryOpen('com-demo',3)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-demo-3"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-demolition3.jpg" class="img" id="portfolio-image-com-demo-3">
                     </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',4)" onmouseout="imageOut('all',4)" onclick="galleryOpen('all',4)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-4-all"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-4.jpg" class="img" id="portfolio-image-4-all">
-                        </div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-demo" id="portfolio-unit-com-demo-4" onmouseover="imageHover('com-demo',4)" onmouseout="imageOut('com-demo',4)" onclick="galleryOpen('com-demo',4)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-demo-4"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-demolition4.jpg" class="img" id="portfolio-image-com-demo-4">
                     </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',5)" onmouseout="imageOut('all',5)" onclick="galleryOpen('all',5)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-5-all"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-5.jpg" class="img" id="portfolio-image-5-all">
-                        </div>
+                </div>
+
+                <!--DRYWALL-->
+                <div class="portfolio_gallery-images--unit com-dry" id="portfolio-unit-com-dry-1" onmouseover="imageHover('com-dry',1)" onmouseout="imageOut('com-dry',1)" onclick="galleryOpen('com-dry',1)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-dry-1"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-drywall1.jpg" class="img" id="portfolio-image-com-dry-1">
                     </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('all',6)" onmouseout="imageOut('all',6)" onclick="galleryOpen('all',6)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-6-all"></div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-dry" id="portfolio-unit-com-dry-2" onmouseover="imageHover('com-dry',2)" onmouseout="imageOut('com-dry',2)" onclick="galleryOpen('com-dry',2)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-dry-2"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-drywall2.jpg" class="img" id="portfolio-image-com-dry-2">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-dry" id="portfolio-unit-com-dry-3" onmouseover="imageHover('com-dry',3)" onmouseout="imageOut('com-dry',3)" onclick="galleryOpen('com-dry',3)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-dry-3"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-drywall3.jpg" class="img" id="portfolio-image-com-dry-3">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-dry" id="portfolio-unit-com-dry-4" onmouseover="imageHover('com-dry',4)" onmouseout="imageOut('com-dry',4)" onclick="galleryOpen('com-dry',4)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-dry-4"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-drywall4.jpg" class="img" id="portfolio-image-com-dry-4">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-dry" id="portfolio-unit-com-dry-5" onmouseover="imageHover('com-dry',5)" onmouseout="imageOut('com-dry',5)" onclick="galleryOpen('com-dry',5)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-dry-5"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-drywall5.jpg" class="img" id="portfolio-image-com-dry-5">
+                    </div>
+                </div>
+
+                <!--PAINTING-->
+                <div class="portfolio_gallery-images--unit com-painting" id="portfolio-unit-com-painting-1" onmouseover="imageHover('com-painting',1)" onmouseout="imageOut('com-painting',1)" onclick="galleryOpen('com-painting',1)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-painting-1"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-painting1.jpg" class="img" id="portfolio-image-com-painting-1">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit com-painting" id="portfolio-unit-com-painting-2" onmouseover="imageHover('com-painting',2)" onmouseout="imageOut('com-painting',2)" onclick="galleryOpen('com-painting',2)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-painting-2"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-painting2.jpg" class="img" id="portfolio-image-com-painting-2">
+                    </div>
+                </div>
+
+
+                <!------------------MULTIPLES------------------>
+                <!--FLOORING-PAINTING-->
+                <div class="portfolio_gallery-images--unit com-flooring" id="portfolio-unit-com-flooring-1" onmouseover="imageHover('com-flooring',1)" onmouseout="imageOut('com-flooring',1)" onclick="galleryOpen('com-flooring',1)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-flooring-1"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-flooring-painting.jpg" class="img" id="portfolio-image-com-flooring-1">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-multiplesimages--unit">
+                    <div class="portfolio_gallery-images--unit com-painting scaleoff sizeoff" id="portfolio-unit-com-painting-3" onmouseover="imageHover('com-painting',3)" onmouseout="imageOut('com-painting',3)" onclick="galleryOpen('com-painting',3)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-painting-3"></div>
                         <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-6.jpg" class="img" id="portfolio-image-6-all">
+                            <img src="resources/img/portfolio/com-flooring-painting.jpg" class="img" id="portfolio-image-com-painting-3">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="portfolio_gallery-images none" id="portfolio-gallery-images-residencial">
-                <div id="portfolio-gallery-box-residencial">
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',1)" onmouseout="imageOut('residencial',1)" onclick="galleryOpen('residencial',1)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-1-residencial"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-1.jpg" class="img" id="portfolio-image-1-residencial">
-                        </div>
+
+                <!--METALS-PAINTING-TILE-->
+                <div class="portfolio_gallery-images--unit com-metals" id="portfolio-unit-com-metals-1" onmouseover="imageHover('com-metals',1)" onmouseout="imageOut('com-metals',1)" onclick="galleryOpen('com-metals',1)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-metals-1"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-metals-painting-tile.jpg" class="img" id="portfolio-image-com-metals-1">
                     </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',2)" onmouseout="imageOut('residencial',2)" onclick="galleryOpen('residencial',2)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-2-residencial"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-2.jpg" class="img" id="portfolio-image-2-residencial">
-                        </div>
-                    </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',3)" onmouseout="imageOut('residencial',3)" onclick="galleryOpen('residencial',3)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-3-residencial"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-3.jpg" class="img" id="portfolio-image-3-residencial">
-                        </div>
-                    </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',4)" onmouseout="imageOut('residencial',4)" onclick="galleryOpen('residencial',4)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-4-residencial"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-4.jpg" class="img" id="portfolio-image-4-residencial">
-                        </div>
-                    </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',5)" onmouseout="imageOut('residencial',5)" onclick="galleryOpen('residencial',5)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-5-residencial"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-5.jpg" class="img" id="portfolio-image-5-residencial">
-                        </div>
-                    </div>
-                    <div class="portfolio_gallery-images--unit" onmouseover="imageHover('residencial',6)" onmouseout="imageOut('residencial',6)" onclick="galleryOpen('residencial',6)">
-                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-6-residencial"></div>
-                        <div class="portfolio_gallery-images--unit---img">
-                            <img src="resources/img/portfolio/residencial-6.jpg" class="img" id="portfolio-image-6-residencial">
-                        </div>
-                    </div>     
                 </div>
-            </div>
-            <div class="portfolio_gallery-images none" id="portfolio-gallery-images-commercial">
-                <div id="portfolio-gallery-box-commercial">
-                    
+                <div class="portfolio_gallery-multiplesimages--unit">
+                    <div class="portfolio_gallery-images--unit com-painting scaleoff sizeoff" id="portfolio-unit-com-painting-4" onmouseover="imageHover('com-painting',4)" onmouseout="imageOut('com-painting',4)" onclick="galleryOpen('com-painting',4)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-painting-4"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/com-metals-painting-tile.jpg" class="img" id="portfolio-image-com-painting-4">
+                        </div>
+                    </div>
                 </div>
+                <div class="portfolio_gallery-multiplesimages--unit">
+                    <div class="portfolio_gallery-images--unit com-tile scaleoff sizeoff" id="portfolio-unit-com-tile-1" onmouseover="imageHover('com-tile',1)" onmouseout="imageOut('com-tile',1)" onclick="galleryOpen('com-tile',1)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-tile-1"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/com-metals-painting-tile.jpg" class="img" id="portfolio-image-com-tile-1">
+                        </div>
+                    </div>
+                </div>
+
+                <!--TILE-SHOWER-PAINTING-->
+                <div class="portfolio_gallery-images--unit com-tile scaleoff sizeoff" id="portfolio-unit-com-tile-2" onmouseover="imageHover('com-tile',2)" onmouseout="imageOut('com-tile',2)" onclick="galleryOpen('com-tile',2)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-tile-2"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/com-tile-shower-painting.jpg" class="img" id="portfolio-image-com-tile-2">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-multiplesimages--unit">
+                    <div class="portfolio_gallery-images--unit com-shower scaleoff sizeoff" id="portfolio-unit-com-shower-1" onmouseover="imageHover('com-shower',1)" onmouseout="imageOut('com-shower',1)" onclick="galleryOpen('com-shower',1)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-shower-1"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/com-tile-shower-painting.jpg" class="img" id="portfolio-image-com-shower-1">
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio_gallery-multiplesimages--unit">
+                    <div class="portfolio_gallery-images--unit com-painting scaleoff sizeoff" id="portfolio-unit-com-painting-5" onmouseover="imageHover('com-painting',5)" onmouseout="imageOut('com-painting',5)" onclick="galleryOpen('com-painting',5)">
+                        <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-com-painting-5"></div>
+                        <div class="portfolio_gallery-images--unit---img">
+                            <img src="resources/img/portfolio/com-tile-shower-painting.jpg" class="img" id="portfolio-image-com-painting-5">
+                        </div>
+                    </div>
+                </div>
+
+                <!--------------------------RESIDENCIAL-------------------------->
+                <!--PAINTING-->
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-1" onmouseover="imageHover('res-painting',1)" onmouseout="imageOut('res-painting',1)" onclick="galleryOpen('res-painting',1)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-1"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting1.jpg" class="img" id="portfolio-image-res-painting-1">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-2" onmouseover="imageHover('res-painting',2)" onmouseout="imageOut('res-painting',2)" onclick="galleryOpen('res-painting',2)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-2"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting2.jpg" class="img" id="portfolio-image-res-painting-2">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-3" onmouseover="imageHover('res-painting',3)" onmouseout="imageOut('res-painting',3)" onclick="galleryOpen('res-painting',3)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-3"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting3.jpg" class="img" id="portfolio-image-res-painting-3">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-4" onmouseover="imageHover('res-painting',4)" onmouseout="imageOut('res-painting',4)" onclick="galleryOpen('res-painting',4)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-4"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting4.jpg" class="img" id="portfolio-image-res-painting-4">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-5" onmouseover="imageHover('res-painting',5)" onmouseout="imageOut('res-painting',5)" onclick="galleryOpen('res-painting',5)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-5"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting5.jpg" class="img" id="portfolio-image-res-painting-5">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-6" onmouseover="imageHover('res-painting',6)" onmouseout="imageOut('res-painting',6)" onclick="galleryOpen('res-painting',6)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-6"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting6.jpg" class="img" id="portfolio-image-res-painting-6">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-7" onmouseover="imageHover('res-painting',7)" onmouseout="imageOut('res-painting',7)" onclick="galleryOpen('res-painting',7)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-7"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting7.jpg" class="img" id="portfolio-image-res-painting-7">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-8" onmouseover="imageHover('res-painting',8)" onmouseout="imageOut('res-painting',8)" onclick="galleryOpen('res-painting',8)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-8"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting8.jpg" class="img" id="portfolio-image-res-painting-8">
+                    </div>
+                </div>
+                <div class="portfolio_gallery-images--unit res-painting scaleoff sizeoff" id="portfolio-unit-res-painting-9" onmouseover="imageHover('res-painting',9)" onmouseout="imageOut('res-painting',9)" onclick="galleryOpen('res-painting',9)">
+                    <div class="portfolio_gallery-images--unit---hover" id="portfolio-image-hover-res-painting-9"></div>
+                    <div class="portfolio_gallery-images--unit---img">
+                        <img src="resources/img/portfolio/res-painting9.jpg" class="img" id="portfolio-image-res-painting-9">
+                    </div>
+                </div>
+
             </div>
         </section>
         <!--CONTACT-1-->
