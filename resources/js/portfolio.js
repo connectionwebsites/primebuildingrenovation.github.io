@@ -129,7 +129,7 @@ function portfolioCategoryAll(a){
         portfolioCategoryOn(a, 'metals');
         portfolioCategoryOn(a, 'tile');
         portfolioCategoryOn(a, 'shower');
-        portfolioMultiplesOn();
+        portfolioMultiplesOff();
     if(a == 'com'){
         portfolioCategoryOff('res', 'demo');
         portfolioCategoryOff('res', 'dry');
